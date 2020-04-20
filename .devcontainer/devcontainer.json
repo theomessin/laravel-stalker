@@ -1,0 +1,22 @@
+{
+    "name": "PHP 7.2",
+    "dockerFile": "Dockerfile",
+    "remoteUser": "vscoder",
+
+    "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "mikestead.dotenv",
+        "ms-azuretools.vscode-docker",
+        "onecentlin.laravel-blade",
+        "redhat.vscode-yaml",
+        "wongjn.php-sniffer"
+    ],
+
+    "settings": {
+        "phpSniffer.executablesFolder": "./vendor/bin/",
+        "phpSniffer.run": "onSave",
+        "terminal.integrated.shell.linux": "/bin/bash"
+    }
+}
