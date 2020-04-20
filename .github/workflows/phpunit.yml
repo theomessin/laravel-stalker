@@ -11,6 +11,9 @@ jobs:
       matrix:
         php-versions: ["7.2", "7.3", "7.4"]
     steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
@@ -23,9 +26,6 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
-
-      - name: Checkout code
-        uses: actions/checkout@master
 
       - name: Set up environment
         uses: shivammathur/setup-php@master
