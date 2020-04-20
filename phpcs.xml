@@ -5,8 +5,14 @@
 
     <rule ref="PSR2" />
 
+    <file>database</file>
     <file>src</file>
     <file>tests</file>
+
+    <!-- Ignore Class Declaration rule for database -->
+    <rule ref="PSR1.Classes.ClassDeclaration">
+        <exclude-pattern>*/database/*</exclude-pattern>
+    </rule>
 
     <!-- Ignore anything under the vendor folder -->
     <exclude-pattern>*/vendor</exclude-pattern>
