@@ -5,7 +5,7 @@ namespace Theomessin\Stalker\Tests\Feature;
 use Theomessin\Stalker\StalkerEntry;
 use Theomessin\Stalker\Tests\TestCase;
 
-class StalkerTest extends TestCase
+class StalkerMiddlewareTest extends TestCase
 {
     /** @test */
     public function it_creates_entry_for_staked_route()

@@ -22,6 +22,11 @@
         <exclude-pattern>*/tests/*</exclude-pattern>
     </rule>
 
+    <!-- Ignore Single class per file for tests -->
+    <rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
+
     <!-- Ignore inline controler structures not allowed -->
     <rule ref="Generic.ControlStructures.InlineControlStructure.NotAllowed">
         <exclude-pattern>*</exclude-pattern>
