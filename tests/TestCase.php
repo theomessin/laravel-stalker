@@ -26,12 +26,27 @@ class TestCase extends BaseTestCase
         // Create a default user for all requests.
         $this->user = factory(User::class)->create();
 
-        // Create a test stalked route.
-        app('router')->any('stalked', null)->middleware('stalk');
+        // Create a some test routes.
+        $this->registerTestingRoutes();
     }
 
     protected function getPackageProviders($app)
     {
         return [StalkerServiceProvider::class];
+    }
+
+    protected function registerTestingRoutes()
+    {
+        app('router')->any('/login', function () {
+            return 'This is a login page.';
+        })->middleware('guest')->name('login');
+
+        app('router')->any('/unprotected', function () {
+            return 'Hello world!';
+        })->middleware('stalk');
+
+        app('router')->any('/protected', function () {
+            return 'Hello secret world!';
+        })->middleware('stalk')->middleware('auth');
     }
 }
